@@ -33,6 +33,13 @@
 // Sometimes it's desirable to build Google Test by compiling a single file.
 // This file serves this purpose.
 
+#include "KytDefinitions.h"
+
+KYT_WARNINGS_PUSH;
+KYT_WARNINGS_DISABLE(KYT_WARNING_CONVERSION_SIGNED_UNSIGNED_MISMATCH);
+KYT_WARNINGS_DISABLE(KYT_WARNING_NOT_DEFINED_AS_PREPROCESSOR_MACRO);
+KYT_WARNINGS_DISABLE(KYT_WARNING_POTENTIALLY_THROWING_FUNCTION_PASSED_TO_EXTERN_C);
+
 // This line ensures that gtest.h can be compiled on its own, even
 // when it's fused.
 #include "gtest/gtest.h"
@@ -46,3 +53,5 @@
 #include "src/gtest-printers.cc"
 #include "src/gtest-test-part.cc"
 #include "src/gtest-typed-test.cc"
+
+KYT_WARNINGS_POP;
